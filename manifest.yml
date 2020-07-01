@@ -17,10 +17,19 @@ url_to_dependency_map:
 - match: nginx-(\d+\.\d+\.\d+)
   name: nginx
   version: "$1"
+- match: pandoc-(\d+\.\d+\.\d+)
+  name: pandoc
+  version: 2.10
 dependencies:
 - name: nginx
   version: 1.11.10
   uri: https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.11.10-linux-x64-4e34e08b.tgz
   md5: 4e34e08b0ec58e107c59a752af12aa43
+  cf_stacks:
+  - cflinuxfs2
+- name: pandoc
+  version: 2.10
+  uri: https://github.com/jgm/pandoc/releases/download/2.10/pandoc-2.10-linux-amd64.tar.gz
+  md5: 1784d1ba2f7f7257104eeeada31e109c
   cf_stacks:
   - cflinuxfs2
